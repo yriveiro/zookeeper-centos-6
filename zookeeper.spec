@@ -4,7 +4,7 @@
 
 %define _noarch_libdir /usr/lib 
 
-%define rel_ver 3.4.3
+%define rel_ver 3.4.5
 
 Summary: High-performance coordination service for distributed applications.
 Name: zookeeper
@@ -13,7 +13,7 @@ Release: 2
 License: Apache License v2.0
 Group: Applications/Databases
 URL: http://hadoop.apache.org/zookeeper/
-Source0: http://www.apache.org/dyn/closer.cgi/hadoop/zookeeper/zookeeper-%{rel_ver}/zookeeper-%{rel_ver}.tar.gz
+Source0: http://www.apache.org/dyn/closer.cgi/zookeeper/zookeeper-%{rel_ver}/zookeeper-%{rel_ver}.tar.gz
 Source1: zookeeper.init
 Source2: zookeeper.logrotate
 Source3: zoo.cfg
@@ -21,7 +21,7 @@ Source4: log4j.properties
 Source5: java.env
 BuildRoot: %{_tmppath}/%{name}-%{rel_ver}-%{release}-root
 BuildRequires: python-devel,gcc,cppunit-devel
-Requires: logrotate, java-1.6.0-openjdk
+Requires: logrotate, jre 
 Requires(post): chkconfig initscripts
 Requires(pre): chkconfig initscripts
 AutoReqProv: no
